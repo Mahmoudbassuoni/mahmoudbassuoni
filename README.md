@@ -43,6 +43,8 @@ I’m passionate about unlocking nature’s mysteries through data—whether it�
 
 </div>
 
+🤝 Together, let's push the boundaries of bioinformatics and science! 🌟
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="dist/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="dist/github-snake.svg" />
@@ -50,4 +52,3 @@ I’m passionate about unlocking nature’s mysteries through data—whether it�
 </picture>
 
 
-🤝 Together, let's push the boundaries of bioinformatics and science! 🌟
