@@ -43,4 +43,7 @@ I’m passionate about unlocking nature’s mysteries through data—whether it�
 
 </div>
 
+![Snake animation](https://github.com/mahmoudbassuoni/mahmoudbassuoni/blob/output/github-contribution-grid-snake.svg)
+
+
 🤝 Together, let's push the boundaries of bioinformatics and science! 🌟
