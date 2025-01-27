@@ -1,21 +1,26 @@
 name: Generate Datas
 on:
   schedule: # execute every 12 hours
-    - cron: "* */12 * * *"
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 jobs:
   build:
-    name: Jobs to update datas
+    name: Generate Snake Animation
     runs-on: ubuntu-22.04
     steps:
-      # Generate Snake Animation
+      # Checkout the repository to access contribution data
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Generate the Snake animation
       - name: Generate Snake Animation
         uses: Platane/snk@v2.2.1
         with:
           github_user_name: mahmoudbassuoni
-          outputs: dist/snake.svg
+          output: dist/snake.svg
+
       # Push the animation to GitHub Pages
-      - name: Push to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
           target_branch: output
