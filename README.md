@@ -29,7 +29,7 @@ I’m passionate about unlocking nature’s mysteries through data—whether it�
 
 🚀 **Let's Connect!**  
 🌐 [Personal Website](https://www.ciimar.up.pt/members/mahmoud-bassyouni-elsayed-attia-abdallah/)  
-🆇 [X](https://x.com/ma7moudbassuoni)  
+🐦 [X](https://x.com/ma7moudbassuoni)  
 💼 [LinkedIn](https://www.linkedin.com/in/mahmoudbassuoni/)  
 
 
