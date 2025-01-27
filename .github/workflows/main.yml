@@ -1,23 +1,31 @@
-name: Generate Datas
+name: Generate Snake Animation
 on:
-  schedule: # execute every 12 hours
+  schedule: # Run every 12 hours
     - cron: "0 */12 * * *"
   workflow_dispatch:
 jobs:
   build:
-    name: Generate Snake Animation
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
-      # Checkout the repository to access contribution data
+      # Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Generate the Snake animation
+      # Generate Snake Animation
       - name: Generate Snake Animation
         uses: Platane/snk@v2.2.1
         with:
           github_user_name: mahmoudbassuoni
-          output: dist/snake.svg
+
+      # Ensure the output branch exists
+      - name: Create Output Branch
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git checkout --orphan output || git switch output
+          git reset --hard
+          git commit --allow-empty -m "Initial commit for output branch"
+          git push origin output
 
       # Push the animation to GitHub Pages
       - name: Deploy to GitHub Pages
