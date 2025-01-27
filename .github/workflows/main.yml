@@ -11,19 +11,23 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Generate Snake Animation
-      - name: Generate Snake Animation
-        uses: Platane/snk@v2.2.1
+      # Generate Snake Animations
+      - name: Generate Snake Animations
+        uses: Platane/snk@v3
         with:
-          github_user_name: mahmoudbassuoni
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      # Commit the generated Snake animation to the main branch
+      # Push the animations to the repository
       - name: Commit and Push
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add -A
-          git commit -m "Update Snake animation" || echo "No changes to commit"
+          git add dist
+          git commit -m "Update Snake Animations" || echo "No changes to commit"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
